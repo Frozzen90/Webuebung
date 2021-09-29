@@ -408,3 +408,39 @@ C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.csproj.Cor
 C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.csproj.CopyComplete
 C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.dll
 C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.pdb
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\WebUebung.dll.config
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\WebUebung.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\WebUebung.pdb
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Antlr3.Runtime.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\AspNet.ScriptManager.bootstrap.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\AspNet.ScriptManager.jQuery.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.ScriptManager.MSAjax.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.ScriptManager.WebForms.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.Web.Infrastructure.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Newtonsoft.Json.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Net.Http.Formatting.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Web.Http.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Web.Http.WebHost.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Web.Optimization.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\WebGrease.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Web.Optimization.xml
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Newtonsoft.Json.xml
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Antlr3.Runtime.pdb
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Net.Http.Formatting.xml
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Web.Http.xml
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\System.Web.Http.WebHost.xml
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\de\System.Web.Optimization.resources.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\de\Microsoft.AspNet.FriendlyUrls.resources.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\de\System.Net.Http.Formatting.resources.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\de\System.Web.Http.resources.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\bin\de\System.Web.Http.WebHost.resources.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\obj\Debug\WebUebung.csprojAssemblyReference.cache
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\obj\Debug\WebUebung.csproj.CoreCompileInputs.cache
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\obj\Debug\WebUebung.csproj.CopyComplete
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\obj\Debug\WebUebung.dll
+F:\Berufsschule\AWE_MEI\002 C#\WebUebung\WebUebung\obj\Debug\WebUebung.pdb
