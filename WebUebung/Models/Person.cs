@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Reflection;
 
 namespace WebUebung
 {
@@ -16,14 +18,14 @@ namespace WebUebung
         private int _ID;
         private string _vorname;
         private string _nachname;
-        private string _geburtstag;
+        private DateTime _geburtstag;
         #endregion
 
         #region Accessoren/Modifier
         public int ID { get => _ID; set => _ID = value; }
         public string Vorname { get => _vorname; set => _vorname = value; }
         public string Nachname { get => _nachname; set => _nachname = value; }
-        public string Geburtstag { get => _geburtstag; set => _geburtstag = value; }
+        public DateTime Geburtstag { get => _geburtstag; set => _geburtstag = value; }
         #endregion
 
         #region Konstruktor
@@ -32,9 +34,9 @@ namespace WebUebung
             ID = 0;
             Vorname = "";
             Nachname = "";
-            Geburtstag = "";
+            Geburtstag = DateTime.MinValue;
         }
-        public Person(int id, string vorname, string nachname, string geburtstag)
+        public Person(int id, string vorname, string nachname, DateTime geburtstag)
         {
             ID = id;
             Vorname = vorname;
@@ -47,6 +49,13 @@ namespace WebUebung
         #region private Worker
         #endregion
         #region public Worker
+        public int GetPropertyCount()
+        {
+            Type t = typeof(Person);
+            PropertyInfo[] propertyInfos;
+            propertyInfos = t.GetProperties();
+            return propertyInfos.Length;
+        }
         #endregion
         #endregion
     }

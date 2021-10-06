@@ -488,3 +488,4 @@ C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.csproj.Cor
 C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.csproj.CopyComplete
 C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.dll
 C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.pdb
+C:\Users\schmitz\source\repos\Webuebung\WebUebung\obj\Debug\WebUebung.csprojAssemblyReference.cache

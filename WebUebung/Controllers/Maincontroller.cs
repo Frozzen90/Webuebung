@@ -26,9 +26,9 @@ namespace WebUebung.Controllers
 
         public void AddPers()
         {
-            PersList.Add(new Person(1, "Sebastian", "Schmitz", "20.02.1990"));
-            PersList.Add(new Person(2, "Daniel", "Schüttke", "13.05.1991"));
-            PersList.Add(new Person(3, "Dieter", "Vogel", "15.08.1984"));
+            PersList.Add(new Person(1, "Sebastian", "Schmitz", Convert.ToDateTime("20.02.1990")));
+            PersList.Add(new Person(2, "Daniel", "Schüttke", Convert.ToDateTime("13.05.1991")));
+            PersList.Add(new Person(3, "Dieter", "Vogel", Convert.ToDateTime("15.08.1984")));
         }
 
         public string ReadApi()
