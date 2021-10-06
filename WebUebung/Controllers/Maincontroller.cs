@@ -31,22 +31,26 @@ namespace WebUebung.Controllers
             PersList.Add(new Person(3, "Dieter", "Vogel", "15.08.1984"));
         }
 
-        public void ReadApi()
+        public string ReadApi()
         {
             string url = "http://localhost:62197/api/person";
             string json = JsonConvert.SerializeObject(PersList);
-            cReadApi(url, json);
+            string empfang = cReadApi(url, json);
+            return empfang;
         }
 
-        public void ReadApi(int ID)
+        public string ReadApi(int ID)
         {
             string url = "http://localhost:62197/api/person/"+ID.ToString();
             string json = JsonConvert.SerializeObject(PersList[ID]);
-            cReadApi(url, json);
+            string empfang = cReadApi(url, json);
+
+            return empfang;
         }
 
-        private void cReadApi(string URL, string Json)
+        private string cReadApi(string URL, string Json)
         {
+            string empfang = "fehlgeschlagen";
             HttpClient hClient = new HttpClient();
             Task<HttpResponseMessage> response = hClient.GetAsync(URL);
 
@@ -55,6 +59,71 @@ namespace WebUebung.Controllers
                 response.Wait();
             }
             catch(Exception e)
+            {
+
+            }
+
+            HttpResponseMessage result = response.Result;
+            Task<string> content = result.Content.ReadAsStringAsync();
+
+            try
+            {
+                content.Wait();
+                empfang = content.Result;
+            }
+            catch (Exception e)
+            {
+
+            }
+            return empfang;
+        }
+
+        public void PostApi(Person PostPerson)
+        {
+            string url = "http://localhost:62197/api/person/" + Global.MCntr.GetListID(PostPerson.ID);
+            string json = JsonConvert.SerializeObject(PostPerson);
+
+            HttpClient hClient = new HttpClient();
+            Task<HttpResponseMessage> response = hClient.PostAsJsonAsync<Person>(url, PostPerson);
+
+            try
+            {
+                response.Wait();
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+
+            HttpResponseMessage result = response.Result;
+            Task<string> content = result.Content.ReadAsStringAsync();
+
+            try
+            {
+                content.Wait();
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+
+            string empfang = content.Result;
+
+        }
+
+        public void PutApi(Person PutPerson)
+        {
+            string url = "http://localhost:62197/api/person/" + Global.MCntr.GetListID(PutPerson.ID);
+            string json = JsonConvert.SerializeObject(PutPerson);
+
+            HttpClient hClient = new HttpClient();
+            Task<HttpResponseMessage> response = hClient.PostAsJsonAsync<Person>(url, PutPerson);
+
+            try
+            {
+                response.Wait();
+            }
+            catch (Exception e)
             {
                 return;
             }
@@ -74,9 +143,77 @@ namespace WebUebung.Controllers
             string empfang = content.Result;
         }
 
-        public void WriteApi()
+        public void DeleteApi(int ID)
         {
+            int ListID = -1;
+            for (int I=0; I < Global.MCntr.PersList.Count; I++)
+            {
+                if (Global.MCntr.PersList[I].ID == ID)
+                {
+                    ListID = I;
+                    break;
+                }
+            }
+            if (ListID != -1)
+            {
+                /*
+                string url = "http://localhost:62197/api/person/" + ListID;
+                string json = JsonConvert.SerializeObject(null);
 
+                HttpClient hClient = new HttpClient();
+                Task<HttpResponseMessage> response = hClient.PutAsJsonAsync<Person>(url, PutPerson);
+
+                try
+                {
+                    response.Wait();
+                }
+                catch (Exception e)
+                {
+                    return;
+                }
+
+                HttpResponseMessage result = response.Result;
+                Task<string> content = result.Content.ReadAsStringAsync();
+
+                try
+                {
+                    content.Wait();
+                }
+                catch (Exception e)
+                {
+                    return;
+                }
+
+                string empfang = content.Result;
+                */
+            }
+        }
+
+        public int GetListID(int PersID)
+        {
+            int ListID = -1;
+            for (int I=0; I < PersList.Count; I++)
+            {
+                if (PersList[I].ID == PersID)
+                {
+                    ListID = I;
+                    break;
+                }
+            }
+            return ListID;
+        }
+
+        public int IncListID()
+        {
+            int newListID = -1;
+            for (int I = 0; I < PersList.Count; I++)
+            {
+                if (PersList[I].ID > newListID)
+                {
+                    newListID = PersList[I].ID + 1;
+                }
+            }
+            return newListID;
         }
     }
 }

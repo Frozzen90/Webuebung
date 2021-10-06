@@ -45,7 +45,8 @@ namespace WebUebung.Controllers
         // POST api/<controller>
         public void Post([FromBody]Person value)
         {
-
+            Person workPers = new Person(value.ID, value.Vorname, value.Nachname, value.Geburtstag);
+            Global.MCntr.PersList.Add(workPers);
         }
 
         public void Post([FromBody]List<Person> value)
@@ -57,32 +58,14 @@ namespace WebUebung.Controllers
         public void Put(int id, [FromBody]Person value)
         {
             Person workPers = new Person(value.ID, value.Vorname, value.Nachname, value.Geburtstag);
-
-            bool PersExists = false;
-            for (int i = 0; 0 < Global.MCntr.PersList.Count; i++)
-            {
-                if (Global.MCntr.PersList[i].ID == id)
-                {
-                    PersExists = true;
-                    break;
-                }
-                else {/*nichts*/}
-            }
-
-            if (PersExists)
-            {
-                Global.MCntr.PersList[id] = workPers;
-            }
-            else
-            {
-                Global.MCntr.PersList.Add(workPers);
-            }
+            Global.MCntr.PersList[Global.MCntr.GetListID(value.ID)] = workPers;
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
-
+            Person delPers = Global.MCntr.PersList[id];
+            Global.MCntr.PersList.Remove(delPers);
         }
     }
 }

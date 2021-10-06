@@ -18,16 +18,18 @@ namespace WebUebung.Views
         protected void btnID_Click(object sender, EventArgs e)
         {
             int ID = Int16.Parse(DropDownList1.SelectedValue);
-            Global.MCntr.ReadApi(ID);
+            string empfang = Global.MCntr.ReadApi(ID);
             DropDownList1.Items.Clear();
             AddIdsToDDL();
+            JsonText.Text = empfang;
         }
 
         protected void btnAll_Click(object sender, EventArgs e)
         {
-            Global.MCntr.ReadApi();
+            string empfang = Global.MCntr.ReadApi();
             DropDownList1.Items.Clear();
             AddIdsToDDL();
+            JsonText.Text = empfang;
         }
 
         private void AddIdsToDDL()
@@ -40,6 +42,28 @@ namespace WebUebung.Views
                     DropDownList1.Items.Add(LI);
                 }
             }
+        }
+
+        protected void btnPostPers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnPutPers_Click(object sender, EventArgs e)
+        {
+            int newID = Global.MCntr.IncListID();
+            string Vorname = tbVorname.Text;
+            string Nachname = tbNachname.Text;
+            string Geburtstag = tbGeburtstag.Text;
+
+            Person newPers = new Person(newID, Vorname, Nachname, Geburtstag);
+
+            Global.MCntr.PutApi(newPers);
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
