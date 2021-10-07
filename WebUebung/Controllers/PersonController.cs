@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace WebUebung.Controllers
@@ -27,6 +24,16 @@ namespace WebUebung.Controllers
         public List<Person> Get()
         {
             return Global.MCntr.PersList;
+        }
+
+        public List<Person> Get(List<int> IDList)
+        {
+            List<Person> Perslist = new List<Person>();
+            for (int i = 0; i < IDList.Count; i++)
+            {
+                Perslist.Add(Global.MCntr.PersList[IDList[i]]);
+            }
+            return Perslist;
         }
 
         // GET api/<controller>/5

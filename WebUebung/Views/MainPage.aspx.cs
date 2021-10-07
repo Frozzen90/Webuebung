@@ -1,16 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebUebung.Controllers;
 
 namespace WebUebung.Views
 {
     public partial class MainPage : System.Web.UI.Page
     {
+        private List<CheckBox> _CBList;
+
+        public List<CheckBox> CBList { get => _CBList; set => _CBList = value; }
+
+        public MainPage()
+        {
+            CBList = new List<CheckBox>();
+        }
+        public MainPage(List<CheckBox> cBList)
+        {
+            CBList = cBList;
+        }
+
         private TableRow FillHeaderRow(PropertyInfo[] propInfos)
         {
             TableRow TR = new TableRow();
@@ -63,8 +72,9 @@ namespace WebUebung.Views
                         CB.ID = $"cb_{ListId.ToString()}";
                         CB.Checked = false;
                         CB.AutoPostBack = true;
-                        //CB.
+                        CBList.Add(CB);
                         TC.Controls.Add(CB);
+                        TC.HorizontalAlign = HorizontalAlign.Center;
                         break;
                     default:
                         break;
@@ -132,7 +142,15 @@ namespace WebUebung.Views
 
         protected void btnPostPers_Click(object sender, EventArgs e)
         {
+            int ID = Int16.Parse(DropDownList1.SelectedValue);
+            Person workPerson = Global.MCntr.PersList[ID];
+            workPerson.Vorname = tbVornamePut.Text;
+            workPerson.Nachname = tbNachnamePut.Text;
+            DateTime DT = Convert.ToDateTime(tbGeburtstagPut.Text);
+            workPerson.Geburtstag = DT;//  Convert.ToDateTime(tbGeburtstagPut.Text);
 
+            Global.MCntr.PostApi(workPerson);
+            JsonText.Text = "OK!";
         }
 
         protected void btnPutPers_Click(object sender, EventArgs e)
@@ -140,16 +158,23 @@ namespace WebUebung.Views
             int newID = Global.MCntr.IncListID();
             string Vorname = tbVornamePut.Text;
             string Nachname = tbNachnamePut.Text;
-            DateTime Geburtstag = Convert.ToDateTime(tbGeburtstagPut.Value);
+            DateTime Geburtstag = Convert.ToDateTime(tbGeburtstagPut.Text);
 
             Person newPers = new Person(newID, Vorname, Nachname, Geburtstag);
 
             Global.MCntr.PutApi(newPers);
+            JsonText.Text = "OK!";
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            JsonText.Text = "OK!";
+        }
 
+        protected void btnGetAuswahl_Click(object sender, EventArgs e)
+        {
+            string empfang = "noch nicht implementiert";
+            JsonText.Text = empfang;
         }
     }
 }

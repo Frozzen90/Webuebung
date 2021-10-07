@@ -22,6 +22,8 @@
             &nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnID" runat="server" OnClick="btnID_Click" Text="GET Person mit ID" Width="164px" />
             &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnGetAuswahl" runat="server" OnClick="btnGetAuswahl_Click" Text="GET ausgewählte Personen" Visible="False" />
+            &nbsp;&nbsp;
             <asp:Button ID="btnAll" runat="server" OnClick="btnAll_Click" Text="GET alle Personen" />
             <br />
             <br />
@@ -50,7 +52,7 @@
                         <asp:Label ID="lblGeburtsdatumPost" runat="server" Text="Geburtsdatum"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <input type="date" id="tbGeburtstagPost" name="tbGeburtstagPost" runat="server">
+                        <asp:TextBox ID="tbGeburtstagPost" runat="server" TextMode="Date" AutoPostBack="true"/>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
@@ -84,7 +86,7 @@
                         <asp:Label ID="lblGeburtsdatumPut" runat="server" Text="Geburtsdatum"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <input type="date" id="tbGeburtstagPut" name="tbGeburtstagPut" runat="server">
+                        <asp:TextBox ID="tbGeburtstagPut" runat="server" TextMode="Date" AutoPostBack="true"/>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
